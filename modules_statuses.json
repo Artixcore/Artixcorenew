@@ -1,0 +1,17 @@
+{
+    "Auth": true,
+    "UserManagement": true,
+    "Contacts": true,
+    "Products": true,
+    "Purchases": true,
+    "Sells": true,
+    "Stocks": true,
+    "Expenses": true,
+    "PaymentAccounts": true,
+    "Reports": true,
+    "Settings": true,
+    "Dashboard": true,
+    "POS": true,
+    "HRM": true,
+    "Superadmin": true
+}
