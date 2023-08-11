@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Index from "../components/index.vue";
+// import Index from "../components/App.vue";
+import Index from "../components/index/header.vue";
 
 const routes = [
     {
