@@ -13,5 +13,7 @@
     "Dashboard": true,
     "POS": true,
     "HRM": true,
-    "Superadmin": true
+    "Superadmin": true,
+    "Frontend": true,
+    "Article": true
 }
