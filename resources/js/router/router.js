@@ -1,18 +1,27 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Index from "../components/frontend/index.vue";
+import Index from "../components/frontend/index/master.vue";
 import Login from "../components/Auth/Login.vue";
+import Register from "../components/Auth/Register.vue";
 // import Index from "../components/frontend/index.vue";
 
 const routes = [
-
-    { path: "/", component: Index },
-    { path: "/Login", component: Login },
-
     {
-        path: "/:pathMatch(.*)*",
-        component: NotFound,
+        path: "/",
+        component: Index, 
     },
+    {
+        path: "/Login",
+        component: Login,
+    },
+    {
+        path: "/Register",
+        component: Register,
+    },
+    // {
+    //     path: "/:pathMatch(.*)*",
+    //     component: NotFound,
+    // },
 ];
 
 const router = createRouter({

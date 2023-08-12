@@ -1,5 +1,6 @@
 <template>
     <h2>
-        <route-link style="color: black;" to="/Login">Login</route-link>
+        <router-link style="color: black;" to="/Login">Login</router-link>
+        <router-link style="color: black;" to="/Register">Register</router-link>
     </h2>
 </template>
