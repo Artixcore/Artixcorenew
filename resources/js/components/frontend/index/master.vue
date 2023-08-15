@@ -14,7 +14,7 @@ import Footer from '../Header/Footer.vue';
         <Header />
         <Banner />
         <Service />
-        <Feature />
+        <!-- <Feature /> -->
         <Team />
         <Contact />
         <Colab />
