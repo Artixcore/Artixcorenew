@@ -1,101 +1,67 @@
 <template>
-    <footer class="pt-6 pt-sm-8 pt-lg-10">
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
         <div class="container">
-            <div class="row pb-6 pb-sm-8 pb-lg-10">
-                <div class="col-sm-6 col-lg-4 mb-4 mb-sm-5 mb-lg-0">
-                    <img src="img/logos/logo-footer-small-white.png" class="mb-4 w-md-50 w-lg-65 w-xl-55" alt="footer-logo">
-
-                    <h5 class="h6 font-weight-300 line-height-normal text-white-90 w-md-85 mb-4">
-                        <span class="text-warning">Amava</span> gives you all elements which are necessary for your design
-                        goals.
-                    </h5>
-
-                    <ul class="list-unstyled social-icon01 p-0 m-0">
-                        <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-
-                </div>
-
-                <div class="col-sm-6 col-lg-2 mb-4 mb-sm-5 mb-lg-0">
-                    <h3 class="h5 font-weight-500 mb-3 mb-lg-4 text-white normal">Services</h3>
-                    <ul class="footer-list02">
-                        <li><a href="#!" class="text-white-60 hover-white">Web Design</a></li>
-                        <li><a href="#!" class="text-white-60 hover-white">Development</a></li>
-                        <li><a href="#!" class="text-white-60 hover-white">WordPress</a></li>
-                        <li><a href="#!" class="text-white-60 hover-white">Online Marketing</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-sm-6 col-lg-3 mb-4 mb-sm-0">
-                    <div class="ps-0 ps-lg-5">
-                        <h3 class="h5 font-weight-500 mb-3 mb-lg-4 text-white normal">About Us</h3>
-                        <ul class="footer-list02">
-                            <li><a href="#!" class="text-white-60 hover-white">About Us</a></li>
-                            <li><a href="#!" class="text-white-60 hover-white">Work Portfolio</a></li>
-                            <li><a href="#!" class="text-white-60 hover-white">Our Team</a></li>
-                            <li><a href="#!" class="text-white-60 hover-white">Price Plan</a></li>
-                        </ul>
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span>Impact</span>
+                    </a>
+                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
+                        darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                    <div class="social-links d-flex mt-4">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-lg-3">
-                    <h3 class="h5 font-weight-500 mb-3 mb-lg-4 text-white normal">Newsletter</h3>
-                    <div class="mb-0">
-
-                        <!-- start form here -->
-                        <form class="quform" action="https://amava.websitelayout.net/quform/newsletter-two.php"
-                            method="post" enctype="multipart/form-data" onclick="">
-
-                            <div class="quform-elements">
-
-                                <div class="row">
-
-                                    <!-- Begin Text input element -->
-                                    <div class="col-md-12">
-                                        <div class="quform-element form-group">
-                                            <div class="quform-input">
-                                                <input class="form-control" id="email_address" type="text"
-                                                    name="email_address" placeholder="Subscribe with us" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Text input element -->
-
-                                    <!-- Begin Submit button -->
-                                    <div class="col-md-12">
-                                        <div class="quform-submit-inner">
-                                            <button class="btn btn-primary w-100 py-2"
-                                                type="submit"><span>Subscribe</span></button>
-                                        </div>
-                                        <div class="quform-loading-wrap text-center"><span class="quform-loading"></span>
-                                        </div>
-                                    </div>
-                                    <!-- End Submit button -->
-
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                        <!-- end form here -->
-
-                    </div>
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
                 </div>
+
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        A108 Adam Street <br>
+                        New York, NY 535022<br>
+                        United States <br><br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> info@example.com<br>
+                    </p>
+
+                </div>
+
             </div>
         </div>
 
-        <div class="text-center border-top py-4 border-color-light-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="text-white-90 mb-0">&copy; Copyright Amava <span class="current-year"></span>. All Rights
-                            Reserved.</p>
-                    </div>
-                </div>
+        <div class="container mt-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved Designed by <a href="https://.com/">Artixcore</a>
+            </div>
+         
         </div>
-    </div>
-</footer></template>
+
+    </footer><!-- End Footer -->
+</template>
+  

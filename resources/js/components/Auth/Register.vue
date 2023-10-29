@@ -20,7 +20,7 @@
                   <input v-model="formData.email" class="form-control" type="email" placeholder="Email" required>
                 </div>
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email address</label>
+                  <label for="email" class="form-label">Password</label>
                   <input v-model="formData.password" class="form-control" type="password" placeholder="Password" required>
                 </div>
                 <div class="d-grid">
@@ -40,7 +40,7 @@
     </div>
   </div>
 </template>
-  
+
 <script>
 import axios from 'axios';
 
@@ -58,7 +58,8 @@ export default {
     registerUser() {
       axios.post('/register', this.formData)
         .then(response => {
-          window.location.href = '/dashboard';
+          // Redirect to the dashboard using router.push
+          router.push('/');
           console.log(response.data.message);
           // You can redirect or show a success message here
         })
@@ -69,5 +70,5 @@ export default {
     },
   },
 };
+
 </script>
-  

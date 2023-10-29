@@ -1,73 +1,151 @@
 <template>
-    <header class="transparent-header bg-transparent">
-        <div class="navbar-default">
-            <div class="top-search bg-black-opacity-light">
-                <div class="container lg-container">
-                    <form class="search-form" action="" method="GET" accept-charset="utf-8">
-                        <div class="input-group">
-                            <span class="input-group-addon cursor-pointer">
-                                <button class="search-form_submit fas fa-search text-white" type="submit"></button>
-                            </span>
-                            <input type="text" class="search-form_input form-control" name="s" autocomplete="off"
-                                placeholder="Type & hit enter...">
-                            <span class="input-group-addon close-search"><i class="fas fa-times mt-2"></i></span>
-                        </div>
-                    </form>
-                </div>
+    <section id="topbar" class="topbar d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a
+                        href="mailto:contact@example.com">contact@example.com</a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
             </div>
-
-            <div class="container lg-container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-12">
-                        <div class="menu_area alt-font">
-                            <nav class="navbar navbar-expand-lg navbar-light p-0">
-                                <div class="navbar-header navbar-header-custom">
-                                    <router-link style="text-decoration: none;" to="/" class="navbar-brand">
-                                        <!-- <img id="logo" src="img/logos/logo.png" alt="logo"> -->
-                                        <h3> Artixcore </h3>
-                                    </router-link>
-                                </div>
-
-                                <div class="navbar-toggler"></div>
-
-                                <ul class="navbar-nav ms-auto" id="nav">
-                                    <li class="nav-item"><router-link to="#!" style="color:black; text-decoration: none;">Home</router-link></li>
-                                    <li class="nav-item">
-                                        <router-link to="#!" style="color:black; text-decoration: none;">Our Softwares</router-link>
-                                        <ul class="submenu">
-                                            <li><router-link style="color:black; text-decoration: none;" to="">POS Pro</router-link></li>
-                                            <li><router-link style="color:black; text-decoration: none;" to="">Nuclear</router-link></li>
-                                            <li><router-link style="color:black; text-decoration: none;" to="">HRM</router-link></li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="#!" style="color:black; text-decoration: none;">AI Products</router-link>
-                                        <ul class="submenu">
-                                            <li><router-link style="color:black; text-decoration: none;" to="">Forex Trading Bot</router-link></li>
-                                            <li><router-link style="color:black; text-decoration: none;" to="">Crypto Trading Bot</router-link></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item"><router-link to="/Login" style="color:black; text-decoration: none;">Login</router-link></li>
- 
-                                </ul>
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
-</header>
+    </section><!-- End Top Bar -->
+
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <router-link style="text-decoration: none;" to="/" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1>Impact<span>.</span></h1>
+            </router-link>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><router-link style="text-decoration: none;" to="/">Home</router-link></li>
+                    <li><router-link style="text-decoration: none;" to="/services">Services</router-link></li>
+                    <li><router-link style="text-decoration: none;" to="/portfolio">Portfolio</router-link></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Our Software</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+
+                            <li class="dropdown">
+                                <a href="#"><span>POS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Supershop</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Pharmecy</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Delivery</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Elecrtonic or Mobile, PC Shop</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Service Center</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Restaurant</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Hospital</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>CRM</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Startup</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Corporate Office</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Enterprise</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Hospital</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>CMS</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Startup</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Corporate Office</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Enterprise</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Hospital</router-link></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><span>AI Products</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+
+                            <li class="dropdown">
+                                <a href="#"><span>ChatBot</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">E-Commerce</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Startup</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Corporate Office</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Enterprise</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Hospital</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Pharmecy</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Delivery</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Elecrtonic or Mobile, PC Shop</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Service Center</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Restaurant</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Hospital</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>Coding Support</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">VS Code Extentions</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Text to Programming</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>TradingBot</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Forex</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Crypto Currency</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>Education / AI Tutor</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Math</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Science</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>Media</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Video Editor / Maker</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Image Generation</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Text / Script Generation</router-link></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#"><span>Engineeering</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                <ul>
+                                    <li><router-link style="text-decoration: none;" to="#">Architecture</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">PCB Design</router-link></li>
+                                    <li><router-link style="text-decoration: none;" to="#">Semiconductor Design</router-link></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li><router-link style="text-decoration: none;" to="/Login">Login</router-link></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+        </div>
+    </header>
 </template>
-  
+
 <style>
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i';
-@import 'assets/vendor/aos/aos.css';
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap';
 @import 'assets/vendor/bootstrap/css/bootstrap.min.css';
 @import 'assets/vendor/bootstrap-icons/bootstrap-icons.css';
+@import 'assets/vendor/aos/aos.css';
 @import 'assets/vendor/glightbox/css/glightbox.min.css';
-@import 'assets/vendor/remixicon/remixicon.css';
 @import 'assets/vendor/swiper/swiper-bundle.min.css';
-@import 'assets/css/style.css';
-</style> 
+@import 'assets/css/main.css';
+</style>

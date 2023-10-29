@@ -1,107 +1,36 @@
 <template>
-    <section class="pt-0">
-      <div class="container">
-  
-        <div class="w-md-75 w-lg-50 text-center mx-md-auto mb-6">
-          <h2 class="line-title">Core Services</h2>
+    <section id="values" class="values">
+        <div class="container" data-aos="fade-up">
+            <header class="section-header">
+                <h2>Our Values</h2>
+                <p>Odit est perspiciatis laborum et dicta</p>
+            </header>
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box">
+                        <img src="assets/img/values-1.png" class="img-fluid" alt="">
+                        <h3>Ad cupiditate sed est odio</h3>
+                        <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                    <div class="box">
+                        <img src="assets/img/values-2.png" class="img-fluid" alt="">
+                        <h3>Voluptatem voluptatum alias</h3>
+                        <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                    <div class="box">
+                        <img src="assets/img/values-3.png" class="img-fluid" alt="">
+                        <h3>Fugit cupiditate alias nobis.</h3>
+                        <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row mt-n1-9">
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 green">
-              <div class="card-body">
-                <h3 class="h5">Exclusive Design</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link class="btn btn-outline-success" style="text-decoration: none;" to="#!">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 fill">
-              <div class="card-body">
-                <h3 class="h5">Responsive layout</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link to="#!" class="btn btn-outline-success" style="text-decoration: none;">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 orange">
-              <div class="card-body">
-                <h3 class="h5">Easy to Customize</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link class="btn btn-outline-success" style="text-decoration: none;" to="#!">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 green">
-              <div class="card-body">
-                <h3 class="h5">Exclusive Design</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link class="btn btn-outline-success" style="text-decoration: none;" to="#!">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 fill">
-              <div class="card-body">
-                <h3 class="h5">Responsive layout</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link to="#!" class="btn btn-outline-success" style="text-decoration: none;">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 orange">
-              <div class="card-body">
-                <h3 class="h5">Easy to Customize</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link class="btn btn-outline-success" style="text-decoration: none;" to="#!">read more</router-link>
-              </div>
-            </div>
-          </div>
+    </section><!-- End Values Section -->
+</template>
 
-          
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 green">
-              <div class="card-body">
-                <h3 class="h5">Exclusive Design</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link class="btn btn-outline-success" style="text-decoration: none;" to="#!">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 fill">
-              <div class="card-body">
-                <h3 class="h5">Responsive layout</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link to="#!" class="btn btn-outline-success" style="text-decoration: none;">read more</router-link>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-md-6 col-lg-4 mt-1-9 mb-2">
-            <div class="card card-style02 orange">
-              <div class="card-body">
-                <h3 class="h5">Easy to Customize</h3>
-                <p>We provide quick and detailed answers for your awesome business.</p>
-                <router-link class="btn btn-outline-success" style="text-decoration: none;" to="#!">read more</router-link>
-              </div>
-            </div>
-          </div>
 
-        </div>
-
-        
-      </div>
-    </section>
-  </template>
   
