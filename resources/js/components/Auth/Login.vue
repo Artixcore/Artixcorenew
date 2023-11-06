@@ -30,7 +30,8 @@
                             </form>
                             <div>
                                 <p class="mb-0  text-center">
-                                    <router-link style="text-decoration: none;" to="/Register">Don't have an account?</router-link> 
+                                    <router-link style="text-decoration: none;" to="/register">Don't have an
+                                        account?</router-link>
                                     <!-- <a href="signup.html"
                                         class="text-primary fw-bold">Sign
                                         Up</a> -->
@@ -44,7 +45,7 @@
         </div>
     </div>
 </template>
-  
+
 <script>
 export default {
     data() {
@@ -63,7 +64,7 @@ export default {
             };
 
             // Make an API request to the Laravel backend
-            axios.post('/api/login', formData)
+            axios.post('/login', formData)
                 .then(response => {
                     // Handle successful login
                     // For example, you could redirect the user to a dashboard page
@@ -77,5 +78,4 @@ export default {
     },
 };
 </script>
-  
-  
+

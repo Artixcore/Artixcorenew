@@ -9,6 +9,11 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
+    public function registerPage()
+    {
+        return view('js/components/Auth/Register');
+    }
+
     public function register(Request $request)
     {
         $request->validate([

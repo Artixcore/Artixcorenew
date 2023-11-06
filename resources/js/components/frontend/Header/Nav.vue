@@ -130,7 +130,7 @@
 
                         </ul>
                     </li>
-                    <li><router-link style="text-decoration: none;" to="/Login">Login</router-link></li>
+                    <li><router-link style="text-decoration: none;" to="/login">Login</router-link></li>
                 </ul>
             </nav><!-- .navbar -->
 
