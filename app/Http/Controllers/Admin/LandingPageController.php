@@ -52,6 +52,43 @@ class LandingPageController extends Controller
         return redirect()->back()->with('success', 'Data updated successfully!');
     }
 
+    public function hero_section_categories()
+    {
+        $data['frontend_contents'] = FrontendContent::where('name', 'like', 'hero_section_category_%')->get();
+        $data['count'] = FrontendContent::where('name', 'like', 'hero_section_category_%')->count();
+
+        return view('admin.landing_page.hero_section.categories', $data);
+    }
+
+    public function hero_section_categories_update(Request $request)
+    {
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'hero_section_category' => 'required',
+            'title' => 'required',
+            'icon' => 'required',
+            'link' => 'required'
+        ]);
+
+        $content = [
+            "title" => $request->title,
+            'icon' => $request->icon,
+            'link' => $request->link
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->hero_section_category
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+
     public function our_values_title()
     {
         $data['frontend_content'] = FrontendContent::where('name', 'our_values_title')->first();
@@ -77,6 +114,41 @@ class LandingPageController extends Controller
                 'meta_title' => $request->meta_title,
                 'description' => $request->description,
                 'meta_description' => $request->meta_description
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+
+    public function our_values_sections()
+    {
+        $data['frontend_contents'] = FrontendContent::where('name', 'like', 'our_values_section_%')->get();
+        $data['count'] = FrontendContent::where('name', 'like', 'our_values_section_%')->count();
+
+        return view('admin.landing_page.our_values.sections', $data);
+    }
+
+    public function our_values_sections_update(Request $request)
+    {
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'our_values_section' => 'required',
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $content = [
+            "title" => $request->title,
+            'description' => $request->description
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->our_values_section
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
             ]
         );
 
@@ -145,6 +217,43 @@ class LandingPageController extends Controller
         return redirect()->back()->with('success', 'Data updated successfully!');
     }
 
+    public function our_services_services()
+    {
+        $data['frontend_contents'] = FrontendContent::where('name', 'like', 'our_services_service_%')->get();
+        $data['count'] = FrontendContent::where('name', 'like', 'our_services_service_%')->count();
+
+        return view('admin.landing_page.our_services.services', $data);
+    }
+
+    public function our_services_services_update(Request $request)
+    {
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'our_services_service' => 'required',
+            'title' => 'required',
+            'icon' => 'required',
+            'description' => 'required'
+        ]);
+
+        $content = [
+            "title" => $request->title,
+            "icon" => $request->icon,
+            'description' => $request->description
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->our_services_service
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+
     public function testimonials_title()
     {
         $data['frontend_content'] = FrontendContent::where('name', 'testimonials_title')->first();
@@ -176,6 +285,45 @@ class LandingPageController extends Controller
         return redirect()->back()->with('success', 'Data updated successfully!');
     }
 
+    public function testimonials_testimonials()
+    {
+        $data['frontend_contents'] = FrontendContent::where('name', 'like', 'testimonials_testimonial_%')->get();
+        $data['count'] = FrontendContent::where('name', 'like', 'testimonials_testimonial_%')->count();
+
+        return view('admin.landing_page.testimonials.testimonials', $data);
+    }
+
+    public function testimonials_testimonials_update(Request $request)
+    {
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'testimonials_testimonial' => 'required',
+            'name' => 'required',
+            'designation' => 'required',
+            'rating' => 'required',
+            'review' => 'required'
+        ]);
+
+        $content = [
+            "name" => $request->name,
+            'designation' => $request->designation,
+            'rating' => $request->rating,
+            'review' => $request->review
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->testimonials_testimonial
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+
     public function portfolio_title()
     {
         $data['frontend_content'] = FrontendContent::where('name', 'portfolio_title')->first();
@@ -201,6 +349,43 @@ class LandingPageController extends Controller
                 'meta_title' => $request->meta_title,
                 'description' => $request->description,
                 'meta_description' => $request->meta_description
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+
+    public function portfolio_projects()
+    {
+        $data['frontend_contents'] = FrontendContent::where('name', 'like', 'portfolio_project_%')->get();
+        $data['count'] = FrontendContent::where('name', 'like', 'portfolio_project_%')->count();
+
+        return view('admin.landing_page.portfolio.projects', $data);
+    }
+
+    public function portfolio_projects_update(Request $request)
+    {
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'portfolio_project' => 'required',
+            'title' => 'required',
+            'link' => 'required',
+            'description' => 'required'
+        ]);
+
+        $content = [
+            "title" => $request->title,
+            'link' => $request->link,
+            'description' => $request->description
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->portfolio_project
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
             ]
         );
 
@@ -263,6 +448,41 @@ class LandingPageController extends Controller
                 'meta_title' => $request->meta_title,
                 'description' => $request->description,
                 'meta_description' => $request->meta_description
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+
+    public function faq_faqs()
+    {
+        $data['frontend_contents'] = FrontendContent::where('name', 'like', 'faq_faq_%')->get();
+        $data['count'] = FrontendContent::where('name', 'like', 'faq_faq_%')->count();
+
+        return view('admin.landing_page.faq.faqs', $data);
+    }
+
+    public function faq_faqs_update(Request $request)
+    {
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'faq_faq' => 'required',
+            'title' => 'required',
+            'description' => 'required'
+        ]);
+
+        $content = [
+            "title" => $request->title,
+            'description' => $request->description
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->faq_faq
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
             ]
         );
 

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('image')->nullable();
+            $table->text('contents')->nullable();
             $table->timestamps();
         });
     }

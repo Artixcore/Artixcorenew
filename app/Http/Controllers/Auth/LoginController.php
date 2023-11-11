@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     public function loginPage()
     {
-        return view('js/components/Auth/Login');
+        return view('admin.auth.login');
     }
 
     public function login(Request $request)

@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     public function registerPage()
     {
-        return view('js/components/Auth/Register');
+        return view('admin.auth.register');
     }
 
     public function register(Request $request)
@@ -30,6 +30,6 @@ class RegisterController extends Controller
 
         $user->save();
 
-        return response()->json(['message' => 'User registered successfully'], 201);
+        return redirect()->route('loginPage');
     }
 }

@@ -60,7 +60,7 @@
                                     <label for="image">Banner</label>
                                     <input type="file" class="form-control" name="image" id="image"
                                         placeholder="Banner">
-                                    @if ($frontend_content->image)
+                                    @if (@$frontend_content->image)
                                         <img src="{{ url($frontend_content->image) }}" alt="Banner"
                                             class="mt-3 img-fluid rounded">
                                     @endif

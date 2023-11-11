@@ -3,7 +3,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="index.html">
+            <a class="nav-link " href="{{ route('dashboard') }}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -23,13 +23,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('landing_page.hero_section.categories') }}">
                         <i class="bi bi-circle"></i><span>Categories</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add Category</span>
                     </a>
                 </li>
             </ul>
@@ -46,13 +41,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('landing_page.our_values.sections') }}">
                         <i class="bi bi-circle"></i><span>Sections</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add Section</span>
                     </a>
                 </li>
             </ul>
@@ -76,13 +66,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('landing_page.our_services.services') }}">
                         <i class="bi bi-circle"></i><span>Services</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add Service</span>
                     </a>
                 </li>
             </ul>
@@ -99,13 +84,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('landing_page.testimonials.testimonials') }}">
                         <i class="bi bi-circle"></i><span>Testimonials</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add Testimonial</span>
                     </a>
                 </li>
             </ul>
@@ -122,13 +102,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('landing_page.portfolio.projects') }}">
                         <i class="bi bi-circle"></i><span>Projects</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add Project</span>
                     </a>
                 </li>
             </ul>
@@ -149,11 +124,6 @@
                         <i class="bi bi-circle"></i><span>Plans</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add Plan</span>
-                    </a>
-                </li>
             </ul>
         </li>
 
@@ -168,13 +138,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('landing_page.faq.faqs') }}">
                         <i class="bi bi-circle"></i><span>FAQs</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-circle"></i><span>Add FAQ</span>
                     </a>
                 </li>
             </ul>
