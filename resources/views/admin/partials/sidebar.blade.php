@@ -57,7 +57,8 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#our-services" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Our Services</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-menu-button-wide"></i><span>Our Services</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="our-services" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
@@ -75,7 +76,8 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#testimonials" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Testimonials</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-menu-button-wide"></i><span>Testimonials</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="testimonials" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
@@ -120,7 +122,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('packages.index') }}">
                         <i class="bi bi-circle"></i><span>Plans</span>
                     </a>
                 </li>
@@ -129,7 +131,8 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#faq" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>Frequently Asked Question</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-menu-button-wide"></i><span>Frequently Asked Question</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="faq" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>

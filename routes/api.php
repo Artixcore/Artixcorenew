@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Frontend\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Route::get('/login', [LoginController::class, 'loginPage']);
 // Route::post('/login', [LoginController::class, 'login']);
+
+Route::get('/get-landing-page-data', [ApiController::class, 'get_landing_page_data']);
