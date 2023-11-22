@@ -3,13 +3,37 @@
 @section('content')
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Title</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                    <li class="breadcrumb-item">Testimonials</li>
-                    <li class="breadcrumb-item active">Title</li>
-                </ol>
+            <nav class="d-flex justify-content-between">
+                <div>
+                    <h1>Title</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item">Testimonials</li>
+                        <li class="breadcrumb-item active">Title</li>
+                    </ol>
+                </div>
+
+                <ul class="sidebar-nav col-2 flex-end">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#testimonials" data-bs-toggle="collapse"
+                            href="#">
+                            <i class="bi bi-menu-button-wide"></i><span>Testimonials</span><i
+                                class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="testimonials" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a href="{{ route('landing_page.testimonials.title') }}">
+                                    <i class="bi bi-circle"></i><span>Title</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('landing_page.testimonials.testimonials') }}">
+                                    <i class="bi bi-circle"></i><span>Testimonials</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </div><!-- End Page Title -->
         <section class="section">

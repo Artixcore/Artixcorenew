@@ -12,6 +12,10 @@ class LoginController extends Controller
 {
     public function loginPage()
     {
+        if (auth()->user()) {
+            return redirect('dashboard');
+        }
+
         return view('admin.auth.login');
     }
 

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.auth.login');
 })->name('home');
 
 Route::get('register', [RegisterController::class, 'registerPage'])->name('registerPage');
