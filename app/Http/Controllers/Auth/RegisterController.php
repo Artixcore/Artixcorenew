@@ -11,6 +11,10 @@ class RegisterController extends Controller
 {
     public function registerPage()
     {
+        if (auth()->user()) {
+            return redirect('dashboard');
+        }
+
         return view('admin.auth.register');
     }
 

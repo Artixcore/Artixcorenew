@@ -3,13 +3,37 @@
 @section('content')
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Categories</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                    <li class="breadcrumb-item">Hero Section</li>
-                    <li class="breadcrumb-item active">Categories</li>
-                </ol>
+            <nav class="d-flex justify-content-between">
+                <div>
+                    <h1>Categories</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item">Hero Section</li>
+                        <li class="breadcrumb-item active">Categories</li>
+                    </ol>
+                </div>
+
+                <ul class="sidebar-nav col-2 flex-end">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" data-bs-target="#hero-section" data-bs-toggle="collapse"
+                            href="#">
+                            <i class="bi bi-menu-button-wide"></i><span>Hero Section</span><i
+                                class="bi bi-chevron-down ms-auto"></i>
+                        </a>
+                        <ul id="hero-section" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                            <li>
+                                <a href="{{ route('landing_page.hero_section.title') }}">
+                                    <i class="bi bi-circle"></i><span>Title & Banner</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('landing_page.hero_section.categories') }}">
+                                    <i class="bi bi-circle"></i><span>Categories</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
         </div><!-- End Page Title -->
         <section class="section">
@@ -80,7 +104,8 @@
                                 <div class="col-md-2">
                                     <div class="form-floating">
                                         <input type="number" class="form-control" name="order_of_appearance"
-                                            id="order_of_appearance" min="1" placeholder="Order of Appearance" required>
+                                            id="order_of_appearance" min="1" placeholder="Order of Appearance"
+                                            required>
                                         <label for="order_of_appearance">Order of Appearance</label>
                                     </div>
                                 </div>
