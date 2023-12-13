@@ -155,16 +155,26 @@ class ApiController extends Controller
                 'link' => $json_data->link
             ];
         }
-        return response()->json([
-            'hero_section' => [
-                "title" => $data->where('name', 'hero_section_title')->first()->title,
-                "meta_title" => $data->where('name', 'hero_section_title')->first()->meta_title,
-                "description" => $data->where('name', 'hero_section_title')->first()->description,
-                "meta_description" => $data->where('name', 'hero_section_title')->first()->meta_description,
-                "banner" => $data->where('name', 'hero_section_title')->first()->image,
-                "sub-sections" => $hero_section_sub_sections
-            ],
-        ]);
+        if($data->where('name', 'hero_section_title')->first()){
+            return response()->json([
+                'hero_section' => [
+                    "title" => $data->where('name', 'hero_section_title')->first()->title,
+                    "meta_title" => $data->where('name', 'hero_section_title')->first()->meta_title,
+                    "description" => $data->where('name', 'hero_section_title')->first()->description,
+                    "meta_description" => $data->where('name', 'hero_section_title')->first()->meta_description,
+                    "banner" => $data->where('name', 'hero_section_title')->first()->image,
+                    "sub-sections" => $hero_section_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the hero section data",
+            ]);
+        }else{  
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'hero_section' => ''
+            ]);
+        }
     }
     public function our_values(){
         $data = FrontendContent::all();
@@ -177,26 +187,46 @@ class ApiController extends Controller
                 'description' => $json_data->description,
             ];
         }
-        return response()->json([
-            'our_values_section' => [
-                "title" => $data->where('name', 'our_values_title')->first()->title,
-                "meta_title" => $data->where('name', 'our_values_title')->first()->meta_title,
-                "description" => $data->where('name', 'our_values_title')->first()->description,
-                "meta_description" => $data->where('name', 'our_values_title')->first()->meta_description,
-                "sub-sections" => $our_value_sub_sections
-            ],
-        ]);
+        if($data->where('name', 'our_values_title')->first()){
+            return response()->json([
+                'our_values_section' => [
+                    "title" => $data->where('name', 'our_values_title')->first()->title,
+                    "meta_title" => $data->where('name', 'our_values_title')->first()->meta_title,
+                    "description" => $data->where('name', 'our_values_title')->first()->description,
+                    "meta_description" => $data->where('name', 'our_values_title')->first()->meta_description,
+                    "sub-sections" => $our_value_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the our values section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'our_values_section' => ''
+            ]);
+        }
     }
     public function about_us(){
         $data = FrontendContent::all();
-        return response()->json([
-            'about_us_section' => [
-                "title" => $data->where('name', 'about_us_title')->first()->title,
-                "meta_title" => $data->where('name', 'about_us_title')->first()->meta_title,
-                "description" => $data->where('name', 'about_us_title')->first()->description,
-                "meta_description" => $data->where('name', 'about_us_title')->first()->meta_description
-            ],
-        ]);
+        if($data->where('name', 'about_us_title')->first()){
+            return response()->json([
+                'about_us_section' => [
+                    "title" => $data->where('name', 'about_us_title')->first()->title,
+                    "meta_title" => $data->where('name', 'about_us_title')->first()->meta_title,
+                    "description" => $data->where('name', 'about_us_title')->first()->description,
+                    "meta_description" => $data->where('name', 'about_us_title')->first()->meta_description
+                ],
+                "status" => 200,
+                "message" => "This is the about us section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'about_us_section' => ''
+            ]);
+        }
     }
     public function our_services(){
         $data = FrontendContent::all();
@@ -210,15 +240,25 @@ class ApiController extends Controller
                 'description' => $json_data->description,
             ];
         }
-        return response()->json([
-            'our_services_section' => [
-                "title" => $data->where('name', 'our_services_title')->first()->title,
-                "meta_title" => $data->where('name', 'our_services_title')->first()->meta_title,
-                "description" => $data->where('name', 'our_services_title')->first()->description,
-                "meta_description" => $data->where('name', 'our_services_title')->first()->meta_description,
-                "sub-sections" => $our_services_sub_sections
-            ],
-        ]);
+        if($data->where('name', 'our_services_title')->first()){
+            return response()->json([
+                'our_services_section' => [
+                    "title" => $data->where('name', 'our_services_title')->first()->title,
+                    "meta_title" => $data->where('name', 'our_services_title')->first()->meta_title,
+                    "description" => $data->where('name', 'our_services_title')->first()->description,
+                    "meta_description" => $data->where('name', 'our_services_title')->first()->meta_description,
+                    "sub-sections" => $our_services_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the our services section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'our_services_section' => ''
+            ]);
+        }
     }
     public function portfolio(){
         $data = FrontendContent::all();
@@ -232,15 +272,25 @@ class ApiController extends Controller
                 'description' => $json_data->description,
             ];
         }
-        return response()->json([
-            'portfolio_section' => [
-                "title" => $data->where('name', 'portfolio_title')->first()->title,
-                "meta_title" => $data->where('name', 'portfolio_title')->first()->meta_title,
-                "description" => $data->where('name', 'portfolio_title')->first()->description,
-                "meta_description" => $data->where('name', 'portfolio_title')->first()->meta_description,
-                "sub-sections" => $portfolio_sub_sections
-            ],
-        ]);
+        if($data->where('name', 'portfolio_title')->first()){
+            return response()->json([
+                'portfolio_section' => [
+                    "title" => $data->where('name', 'portfolio_title')->first()->title,
+                    "meta_title" => $data->where('name', 'portfolio_title')->first()->meta_title,
+                    "description" => $data->where('name', 'portfolio_title')->first()->description,
+                    "meta_description" => $data->where('name', 'portfolio_title')->first()->meta_description,
+                    "sub-sections" => $portfolio_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the portfolio section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'portfolio_section' => ''
+            ]);
+        }
     }
     public function pricing(){
         $data = FrontendContent::all();
@@ -255,15 +305,25 @@ class ApiController extends Controller
                 'details' => $json_data
             ];
         }
-        return response()->json([
-            'pricing_section' => [
-                "title" => $data->where('name', 'pricing_title')->first()->title,
-                "meta_title" => $data->where('name', 'pricing_title')->first()->meta_title,
-                "description" => $data->where('name', 'pricing_title')->first()->description,
-                "meta_description" => $data->where('name', 'pricing_title')->first()->meta_description,
-                "plans" => $package_plans
-            ],
-        ]);
+        if($data->where('name', 'pricing_title')->first()){
+            return response()->json([
+                'pricing_section' => [
+                    "title" => $data->where('name', 'pricing_title')->first()->title,
+                    "meta_title" => $data->where('name', 'pricing_title')->first()->meta_title,
+                    "description" => $data->where('name', 'pricing_title')->first()->description,
+                    "meta_description" => $data->where('name', 'pricing_title')->first()->meta_description,
+                    "plans" => $package_plans
+                ],
+                "status" => 200,
+                "message" => "This is the pricing section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'pricing_section' => ''
+            ]);
+        }
     }
     public function faq(){
         $data = FrontendContent::all();
@@ -276,15 +336,25 @@ class ApiController extends Controller
                 'description' => $json_data->description,
             ];
         }
-        return response()->json([
-            'faq_section' => [
-                "title" => $data->where('name', 'faq_title')->first()->title,
-                "meta_title" => $data->where('name', 'faq_title')->first()->meta_title,
-                "description" => $data->where('name', 'faq_title')->first()->description,
-                "meta_description" => $data->where('name', 'faq_title')->first()->meta_description,
-                "sub-sections" => $faq_sub_sections
-            ],
-        ]);
+        if($data->where('name', 'faq_title')->first()){
+            return response()->json([
+                'faq_section' => [
+                    "title" => $data->where('name', 'faq_title')->first()->title,
+                    "meta_title" => $data->where('name', 'faq_title')->first()->meta_title,
+                    "description" => $data->where('name', 'faq_title')->first()->description,
+                    "meta_description" => $data->where('name', 'faq_title')->first()->meta_description,
+                    "sub-sections" => $faq_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the faq section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'faq_section' => ''
+            ]);
+        }
     }
     public function testimonials(){
         $data = FrontendContent::all();
@@ -299,14 +369,24 @@ class ApiController extends Controller
                 'review' => $json_data->review,
             ];
         }
-        return response()->json([
-            'testimonials_section' => [
-                "title" => $data->where('name', 'testimonials_title')->first()->title,
-                "meta_title" => $data->where('name', 'testimonials_title')->first()->meta_title,
-                "description" => $data->where('name', 'testimonials_title')->first()->description,
-                "meta_description" => $data->where('name', 'testimonials_title')->first()->meta_description,
-                "sub-sections" => $testimonials_sub_sections
-            ],
-        ]);
+        if($data->where('name', 'testimonials_title')->first()){
+            return response()->json([
+                'testimonials_section' => [
+                    "title" => $data->where('name', 'testimonials_title')->first()->title,
+                    "meta_title" => $data->where('name', 'testimonials_title')->first()->meta_title,
+                    "description" => $data->where('name', 'testimonials_title')->first()->description,
+                    "meta_description" => $data->where('name', 'testimonials_title')->first()->meta_description,
+                    "sub-sections" => $testimonials_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the testimonials section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'testimonials_section' => ''
+            ]);
+        }
     }
 }
