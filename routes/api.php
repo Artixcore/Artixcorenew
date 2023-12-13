@@ -24,3 +24,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/get-landing-page-data', [ApiController::class, 'get_landing_page_data']);
+Route::get('/get-hero-section', [ApiController::class, 'hero_section']);
+Route::get('/get-our-values', [ApiController::class, 'our_values']);
+Route::get('/get-about-us', [ApiController::class, 'about_us']);
+Route::get('/get-our-services', [ApiController::class, 'our_services']);
+Route::get('/get-portfolio', [ApiController::class, 'portfolio']);
+Route::get('/get-priceing', [ApiController::class, 'pricing']);
+Route::get('/get-faq', [ApiController::class, 'faq']);
+Route::get('/get-testimonials', [ApiController::class, 'testimonials']);
+
