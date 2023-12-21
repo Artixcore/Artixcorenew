@@ -19,7 +19,12 @@ use App\Http\Controllers\Frontend\ApiController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
+Route::middleware(['auth:sanctum'])->group(function () {
+    // logout
+    Route::post('/logout', [ApiController::class, 'logout']);
+    // reset password
+    Route::post('/reset-password', [ApiController::class, 'reset_password']);
+});
 // Route::get('/login', [LoginController::class, 'loginPage']);
 // Route::post('/login', [LoginController::class, 'login']);
 
@@ -32,4 +37,7 @@ Route::get('/get-portfolio', [ApiController::class, 'portfolio']);
 Route::get('/get-priceing', [ApiController::class, 'pricing']);
 Route::get('/get-faq', [ApiController::class, 'faq']);
 Route::get('/get-testimonials', [ApiController::class, 'testimonials']);
+
+Route::post('/register', [ApiController::class, 'register']);
+Route::post('/login', [ApiController::class, 'login']);
 

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Admin\FrontendContent;
-use App\Models\Admin\Package;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Admin\Package;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Admin\FrontendContent;
 
 class ApiController extends Controller
 {
@@ -386,6 +389,110 @@ class ApiController extends Controller
                 "status" => 403,
                 "message" => "No data found",
                 'testimonials_section' => ''
+            ]);
+        }
+    }
+
+    public function register(Request $request)
+    {
+        try{
+            $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|string|email|unique:users',
+                'password' => 'required|string|min:8',
+            ]);
+    
+            $user = new User([
+                'name' => $request->name,
+                'email' => $request->email,
+                'user_type' => 'basic_user',
+                'password' => Hash::make($request->password),
+            ]);
+    
+            $user->save();
+    
+            return response()->json([
+                "status" => 200,
+                "message" => "User created successfully",
+            ]);
+        }
+        catch(\Exception $e){
+            return response()->json([
+                "status" => 403,
+                "message" => "Something went wrong",
+            ]);
+        }
+    }
+
+    public function login(Request $request)
+    {
+        // after confirm login data create sanctum token and return it
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication was successful
+            $user = User::where('email', $request->email)->first();
+            $token = $user->createToken('auth_token')->plainTextToken;
+            return response()->json([
+                "status" => 200,
+                "message" => "User logged in successfully",
+                "token" => $token
+            ]);
+        } else {
+            // Authentication failed
+            return response()->json([
+                "status" => 403,
+                "message" => "Invalid credentials",
+            ]);
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        try{
+            $user = Auth::user()->email;
+            $user_details = User::where('email', $user)->first();
+            $user_details->tokens()->delete();
+            return response()->json([
+                "status" => 200,
+                "message" => "User logged out successfully",
+            ]);
+        }
+        catch(\Exception $e){
+            return response()->json([
+                "status" => 403,
+                "message" => "Something went wrong",
+            ]);
+        }
+    }
+
+    public function reset_password(Request $request)
+    {
+        try{
+            $user_mail = Auth::user()->email;
+            $request->validate([
+                'new_password' => 'required|string|min:8',
+            ]);
+            $user = User::where('email', $user_mail)->first();
+            // check old password match or not
+            if(Hash::check($request->old_password, $user->password)){
+                $user->password = Hash::make($request->new_password);
+                $user->save();
+                return response()->json([
+                    "status" => 200,
+                    "message" => "Password changed successfully",
+                ]);
+            }
+            else{
+                return response()->json([
+                    "status" => 403,
+                    "message" => "Old password doesn't match",
+                ]);
+            }
+        }
+        catch(\Exception $e){
+            return response()->json([
+                "status" => 403,
+                "message" => "Something went wrong",
             ]);
         }
     }

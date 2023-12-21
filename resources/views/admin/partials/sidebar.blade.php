@@ -8,7 +8,14 @@
                 <span>Dashboard</span>
             </a>
         </li>
-
+        @if (auth()->user()->user_type == 'admin')
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('employees.index') }}">
+                <i class="bi bi-people"></i>
+                <span>Employees</span>
+            </a>
+        </li>
+        @endif
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#landing-page" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i><span>Landing Page</span><i

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use PharIo\Manifest\Email;
 
 
 class LoginController extends Controller
@@ -29,5 +30,21 @@ class LoginController extends Controller
             // Authentication failed
             return redirect()->back()->withErrors(['login' => 'Invalid credentials']); // Redirect back with an error message
         }
+    }
+
+    public function homePage()
+    {
+        if (auth()->user()) {
+            return redirect('dashboard');
+        }
+        else{
+            return view('admin.auth.login');
+        }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('login');
     }
 }

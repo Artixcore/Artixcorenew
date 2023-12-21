@@ -18,17 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.auth.login');
-})->name('home');
+Route::get('/', [LoginController::class, 'homePage'])->name('home');
 
 Route::get('register', [RegisterController::class, 'registerPage'])->name('registerPage');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 
 Route::get('login', [LoginController::class, 'loginPage'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('loginPage');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     Route::controller(LandingPageController::class)->prefix('landing_page')->name('landing_page.')->group(function () {
@@ -101,5 +100,14 @@ Route::middleware('auth')->group(function () {
         Route::put('update/{package}', 'update')->name('update');
 
         Route::delete('destroy/{package}', 'destroy')->name('destroy');
+    });
+
+    Route::controller(HomeController::class)->prefix('employees')->name('employees.')->group(function () {
+        Route::get('/', 'employees')->name('index');
+        Route::get('create', 'employee_create')->name('create');
+        Route::post('store', 'employee_store')->name('store');
+        Route::get('edit/{user}', 'employee_edit')->name('edit');
+        Route::put('update/{user}', 'employee_update')->name('update');
+        Route::delete('destroy/{user}', 'employee_destroy')->name('destroy');
     });
 });
