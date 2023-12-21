@@ -187,6 +187,18 @@ class LandingPageController extends Controller
                     'contents' => json_encode($content)
                 ]
             );
+            if ($request->hasFile('image')) {
+                @unlink($frontend_content->image);
+    
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalName();
+                $filename = time() . '-' . $extension;
+                $file->move('uploads/', $filename);
+    
+                $frontend_content->update([
+                    'image' => 'uploads/' . $filename,
+                ]);
+            }
     
             return redirect()->back()->with('success', 'Data updated successfully!');
         }
@@ -297,10 +309,9 @@ class LandingPageController extends Controller
             'order_of_appearance' => 'required',
             'our_services_service' => 'required',
             'title' => 'required',
-            'icon' => 'required',
             'description' => 'required'
         ]);
-
+        
         $content = [
             "title" => $request->title,
             "icon" => $request->icon,
@@ -316,6 +327,18 @@ class LandingPageController extends Controller
                 'contents' => json_encode($content)
             ]
         );
+        if ($request->hasFile('image')) {
+            @unlink($frontend_content->image);
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename = time() . '-' . $extension;
+            $file->move('uploads/', $filename);
+
+            $frontend_content->update([
+                'image' => 'uploads/' . $filename,
+            ]);
+        }
 
         return redirect()->back()->with('success', 'Data updated successfully!');
     }
@@ -494,6 +517,18 @@ class LandingPageController extends Controller
                 'contents' => json_encode($content)
             ]
         );
+        if ($request->hasFile('image')) {
+            @unlink($frontend_content->image);
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename = time() . '-' . $extension;
+            $file->move('uploads/', $filename);
+
+            $frontend_content->update([
+                'image' => 'uploads/' . $filename,
+            ]);
+        }
 
         return redirect()->back()->with('success', 'Data updated successfully!');
     }

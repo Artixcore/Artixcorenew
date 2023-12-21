@@ -51,7 +51,7 @@
                             <!-- Floating Labels Form -->
                             @foreach ($frontend_contents as $frontend_content)
                                 <form class="row g-3 mb-3" action="{{ route('landing_page.our_values.sections.update') }}"
-                                    method="POST">
+                                    method="POST" enctype="multipart/form-data" >
                                     @csrf
                                     <input type="hidden" class="form-control" name="{{ 'our_values_section' }}"
                                         value="{{ @$frontend_content->name }}">
@@ -82,6 +82,15 @@
                                             <label for="description">Description</label>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <label for="image">Thumbnail</label>
+                                        <input type="file" class="form-control" name="image" id="image"
+                                            placeholder="Banner">
+                                            {{-- @if (@$frontend_content->image)
+                                        <img src="{{ url($frontend_content->image) }}" alt="Banner"
+                                            class="mt-3 img-fluid rounded">
+                                        @endif --}}
+                                    </div>
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-primary">Update</button>
                                     </div>
@@ -89,7 +98,7 @@
                             @endforeach
 
                             <form class="row g-3" action="{{ route('landing_page.our_values.sections.update') }}"
-                                method="POST">
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" class="form-control" name="{{ 'our_values_section' }}"
                                     value="{{ 'our_values_section_' . $count + 1 }}">
@@ -114,6 +123,11 @@
                                             required></textarea>
                                         <label for="description">Description</label>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="image">Thumbnail</label>
+                                    <input type="file" class="form-control" name="image" id="image"
+                                        placeholder="Banner">
                                 </div>
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-primary">Add</button>

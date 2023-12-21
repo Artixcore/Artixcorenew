@@ -188,6 +188,7 @@ class ApiController extends Controller
             $our_value_sub_sections[] = [
                 'title' => $json_data->title,
                 'description' => $json_data->description,
+                'image' => $section->image
             ];
         }
         if($data->where('name', 'our_values_title')->first()){
@@ -241,6 +242,7 @@ class ApiController extends Controller
                 'title' => $json_data->title,
                 'icon' => $json_data->icon,
                 'description' => $json_data->description,
+                'image' => $section->image
             ];
         }
         if($data->where('name', 'our_services_title')->first()){
@@ -273,6 +275,7 @@ class ApiController extends Controller
                 'title' => $json_data->title,
                 'link' => $json_data->link,
                 'description' => $json_data->description,
+                'image' => $section->image
             ];
         }
         if($data->where('name', 'portfolio_title')->first()){

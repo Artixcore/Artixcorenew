@@ -52,11 +52,11 @@
                             <!-- Floating Labels Form -->
                             @foreach ($frontend_contents as $frontend_content)
                                 <form class="row g-3 mb-3" action="{{ route('landing_page.our_services.services.update') }}"
-                                    method="POST">
+                                    method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" class="form-control" name="{{ 'our_services_service' }}"
                                         value="{{ @$frontend_content->name }}">
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="number" class="form-control" name="order_of_appearance"
                                                 id="order_of_appearance" min="1"
@@ -76,19 +76,28 @@
                                             <label for="title">Title</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" name="icon" id="icon"
                                                 value="{{ @$data->icon }}" placeholder="Icon" required>
                                             <label for="icon">Icon</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-floating">
                                             <textarea class="form-control" placeholder="Description" name="description" id="description" style="height: 100px;"
                                                 required>{{ @$data->description }}</textarea>
                                             <label for="description">Description</label>
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="image">Thumbnail</label>
+                                        <input type="file" class="form-control" name="image" id="image"
+                                            placeholder="Banner">
+                                        @if (@$frontend_content->image)
+                                        <img src="{{ url($frontend_content->image) }}" alt="Banner"
+                                            class="mt-3 img-fluid rounded">
+                                        @endif
                                     </div>
                                     <div class="text-end">
                                         <button type="submit" class="btn btn-primary">Update</button>
@@ -97,11 +106,11 @@
                             @endforeach
 
                             <form class="row g-3" action="{{ route('landing_page.our_services.services.update') }}"
-                                method="POST">
+                                method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" class="form-control" name="{{ 'our_services_service' }}"
                                     value="{{ 'our_services_service_' . $count + 1 }}">
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <div class="form-floating">
                                         <input type="number" class="form-control" name="order_of_appearance"
                                             id="order_of_appearance" min="1" placeholder="Order of Appearance"
@@ -116,19 +125,24 @@
                                         <label for="title">Title</label>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" name="icon" id="icon"
                                             placeholder="Icon" required>
                                         <label for="icon">Icon</label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Description" name="description" id="description" style="height: 100px;"
                                             required></textarea>
                                         <label for="description">Description</label>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="image">Thumbnail</label>
+                                    <input type="file" class="form-control" name="image" id="image"
+                                        placeholder="Banner">
                                 </div>
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-primary">Add</button>
