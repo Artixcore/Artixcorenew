@@ -34,6 +34,7 @@ Route::get('/get-our-values', [ApiController::class, 'our_values']);
 Route::get('/get-about-us', [ApiController::class, 'about_us']);
 Route::get('/get-our-services', [ApiController::class, 'our_services']);
 Route::get('/get-portfolio', [ApiController::class, 'portfolio']);
+Route::get('/get-project', [ApiController::class, 'project']);
 Route::get('/get-priceing', [ApiController::class, 'pricing']);
 Route::get('/get-faq', [ApiController::class, 'faq']);
 Route::get('/get-testimonials', [ApiController::class, 'testimonials']);

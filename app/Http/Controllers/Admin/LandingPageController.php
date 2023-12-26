@@ -505,7 +505,8 @@ class LandingPageController extends Controller
         $content = [
             "title" => $request->title,
             'link' => $request->link,
-            'description' => $request->description
+            'description' => $request->description,
+            'type' => $request->type,
         ];
 
         $frontend_content = FrontendContent::updateOrCreate(
@@ -657,6 +658,112 @@ class LandingPageController extends Controller
             ]
         );
 
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+    else{
+        return redirect('login')->with('error', 'You are not authorized to access this page!');
+    }
+    }
+
+
+
+
+
+
+    public function project_title()
+    {
+        if(auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'editor'){
+            $data['frontend_content'] = FrontendContent::where('name', 'project_title')->first();
+
+            return view('admin.landing_page.project.title', $data);
+        }
+        else{
+            return redirect('login')->with('error', 'You are not authorized to access this page!');
+        }
+    }
+
+    public function project_title_update(Request $request)
+    {
+        if(auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'editor'){
+        $validated = $request->validate([
+            'title' => 'required',
+            'meta_title' => 'required',
+            'description' => 'required',
+            'meta_description' => 'required'
+        ]);
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => 'project_title'
+            ],
+            [
+                'title' => $request->title,
+                'meta_title' => $request->meta_title,
+                'description' => $request->description,
+                'meta_description' => $request->meta_description
+            ]
+        );
+
+        return redirect()->back()->with('success', 'Data updated successfully!');
+    }
+    else{
+        return redirect('login')->with('error', 'You are not authorized to access this page!');
+    }
+    }
+
+    public function project_projects()
+    {
+        if(auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'editor'){
+            $data['frontend_contents'] = FrontendContent::where('name', 'like', 'project_project_%')->get();
+            $data['count'] = FrontendContent::where('name', 'like', 'project_project_%')->count();
+    
+            return view('admin.landing_page.project.projects', $data);
+        }
+        else{
+            return redirect('login')->with('error', 'You are not authorized to access this page!');
+        }
+    }
+
+    public function project_projects_update(Request $request)
+    {
+        if(auth()->user()->user_type == 'admin' || auth()->user()->user_type == 'editor'){
+        $validated = $request->validate([
+            'order_of_appearance' => 'required',
+            'project_project' => 'required',
+            'title' => 'required',
+            'link' => 'required',
+            'description' => 'required',
+        ]);
+
+        $content = [
+            "title" => $request->title,
+            'link' => $request->link,
+            'description' => $request->description,
+            'type' => $request->type,
+        ];
+
+        $frontend_content = FrontendContent::updateOrCreate(
+            [
+                'name' => $request->project_project
+            ],
+            [
+                'order_of_appearance' => $request->order_of_appearance,
+                'contents' => json_encode($content)
+            ]
+        );
+        if ($request->hasFile('image')) {
+            @unlink($frontend_content->image);
+
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $filename = time() . '-' . $extension;
+            $file->move('uploads/', $filename);
+
+            $frontend_content->update([
+                'image' => 'uploads/' . $filename,
+            ]);
+        }
+        
         return redirect()->back()->with('success', 'Data updated successfully!');
     }
     else{

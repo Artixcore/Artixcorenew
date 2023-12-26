@@ -76,6 +76,14 @@ Route::middleware(['auth'])->group(function () {
             Route::post('projects', 'portfolio_projects_update')->name('projects.update');
         });
 
+        Route::prefix('project')->name('project.')->group(function () {
+            Route::get('title', 'project_title')->name('title');
+            Route::post('title', 'project_title_update')->name('title.update');
+
+            Route::get('projects', 'project_projects')->name('projects');
+            Route::post('projects', 'project_projects_update')->name('projects.update');
+        });
+
         Route::prefix('pricing')->name('pricing.')->group(function () {
             Route::get('title', 'pricing_title')->name('title');
             Route::post('title', 'pricing_title_update')->name('title.update');

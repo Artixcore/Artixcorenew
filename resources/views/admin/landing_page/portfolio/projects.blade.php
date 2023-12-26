@@ -89,6 +89,17 @@
                                             <label for="description">Description</label>
                                         </div>
                                     </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <select class="form-select" id="type" name="type" required>
+                                                <option value="application" @if (@$data->type == 'application') selected @endif>Application</option>
+                                                <option value="app_design" @if (@$data->type == 'app_design') selected @endif>App Design</option>
+                                                <option value="web_design" @if (@$data->type == 'web_design') selected @endif>Web Design</option>
+                                                <option value="ai" @if (@$data->type == 'ai') selected @endif>AI</option>
+                                            </select>
+                                            <label for="type">Type</label>
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <label for="image">Thumbnail</label>
                                         <input type="file" class="form-control" name="image" id="image"
@@ -136,6 +147,17 @@
                                         <textarea class="form-control" placeholder="Description" name="description" id="description" style="height: 100px;"
                                             required></textarea>
                                         <label for="description">Description</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="type" name="type" required>
+                                            <option value="application">Application</option>
+                                            <option value="app_design">App Design</option>
+                                            <option value="web_design">Web Design</option>
+                                            <option value="ai">AI</option>
+                                        </select>
+                                        <label for="type">Type</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

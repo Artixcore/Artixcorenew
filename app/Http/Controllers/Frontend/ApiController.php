@@ -275,7 +275,8 @@ class ApiController extends Controller
                 'title' => $json_data->title,
                 'link' => $json_data->link,
                 'description' => $json_data->description,
-                'image' => $section->image
+                'image' => $section->image,
+                'type' => $json_data->type,
             ];
         }
         if($data->where('name', 'portfolio_title')->first()){
@@ -496,6 +497,41 @@ class ApiController extends Controller
             return response()->json([
                 "status" => 403,
                 "message" => "Something went wrong",
+            ]);
+        }
+    }
+
+    public function project(){
+        $data = FrontendContent::all();
+        $project = FrontendContent::where('name', 'like', 'project_project_%')->orderBy('order_of_appearance')->get();
+        $project_sub_sections = [];
+        foreach ($project as $section) {
+            $json_data = json_decode($section->contents);
+            $project_sub_sections[] = [
+                'title' => $json_data->title,
+                'link' => $json_data->link,
+                'description' => $json_data->description,
+                'image' => $section->image,
+                'type' => $json_data->type,
+            ];
+        }
+        if($data->where('name', 'project_title')->first()){
+            return response()->json([
+                'project_section' => [
+                    "title" => $data->where('name', 'project_title')->first()->title,
+                    "meta_title" => $data->where('name', 'project_title')->first()->meta_title,
+                    "description" => $data->where('name', 'project_title')->first()->description,
+                    "meta_description" => $data->where('name', 'project_title')->first()->meta_description,
+                    "sub-sections" => $project_sub_sections
+                ],
+                "status" => 200,
+                "message" => "This is the project section data",
+            ]);
+        }else{
+            return response()->json([
+                "status" => 403,
+                "message" => "No data found",
+                'project_section' => ''
             ]);
         }
     }

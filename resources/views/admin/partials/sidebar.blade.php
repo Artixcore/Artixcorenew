@@ -53,6 +53,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('landing_page.project.title') }}">
+                        <i class="bi bi-circle"></i><span>Project</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('landing_page.pricing.title') }}">
                         <i class="bi bi-circle"></i><span>Pricing</span>
                     </a>
