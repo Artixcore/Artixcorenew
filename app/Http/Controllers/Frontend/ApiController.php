@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
+use App\Mail\UserDataMail;
 use Illuminate\Http\Request;
 use App\Models\Admin\Package;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Admin\FrontendContent;
 
 class ApiController extends Controller
@@ -532,6 +534,33 @@ class ApiController extends Controller
                 "status" => 403,
                 "message" => "No data found",
                 'project_section' => ''
+            ]);
+        }
+    }
+
+    public function send_user_data(Request $request){
+        try{
+            $request->validate([
+                'name' => 'required|string',
+                'email' => 'required|string|email',
+                'description' => 'required|string',
+            ]);
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'description' => $request->description,
+            ];
+            $adminEmail = env('ADMIN_EMAIL');
+            Mail::to($adminEmail)->send(new UserDataMail($data));
+            return response()->json([
+                "status" => 200,
+                "message" => "Mail sent successfully",
+            ]);
+        }
+        catch(\Exception $e){
+            return response()->json([
+                "status" => 403,
+                "message" => $e->getMessage(),
             ]);
         }
     }

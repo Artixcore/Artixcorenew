@@ -42,3 +42,6 @@ Route::get('/get-testimonials', [ApiController::class, 'testimonials']);
 Route::post('/register', [ApiController::class, 'register']);
 Route::post('/login', [ApiController::class, 'login']);
 
+// API for user sended data 
+Route::post('/send-user-data', [ApiController::class, 'send_user_data']);
+
